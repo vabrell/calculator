@@ -26,16 +26,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Check node version
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-        
-    # Check if build passes
-    - name: Build
-      run: run npm build --if-present
-
     # Check if unit tests passes
     - name: Unit test
       run: npm test

@@ -33,4 +33,4 @@ jobs:
 
     # Check if unit tests passes
     - name: Unit test
-      run: npx vue-cli-service test:unit
+      run: npx @vue/cli-service test:unit

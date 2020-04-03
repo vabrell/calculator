@@ -1,5 +1,5 @@
 const assert = require('assert'),
-  { add } = require('../../src/assets/calculator')
+  { add } = require('../src/assets/calculator')
 
 describe('calculator.js', () => {
 

@@ -28,4 +28,4 @@ jobs:
 
     # Check if unit tests passes
     - name: Unit test
-      run: npm test
+      run: npm run test:unit

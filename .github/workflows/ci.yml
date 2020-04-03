@@ -16,10 +16,6 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,4 +24,4 @@ jobs:
 
     # Check if unit tests passes
     - name: Unit test
-      run: npm run test:unit
+      run: npx vue-cli-service test:unit

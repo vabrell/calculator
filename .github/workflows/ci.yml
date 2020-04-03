@@ -34,7 +34,7 @@ jobs:
         
     # Check if build passes
     - name: Build
-      run: run npm build --if-present
+      run: npm run build --if-present
 
     # Check if unit tests passes
     - name: Unit test

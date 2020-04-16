@@ -17,6 +17,7 @@
 
 			<div class="actions">
 				<button class="addition" @click="addition()">+</button>
+				<button class="subtraction" @click="subtraction()">+</button>
 				<button class="equals" @click="equals()">=</button>
 			</div>
 		</div>
@@ -24,7 +25,7 @@
 </template>
 
 <script>
-import { add } from '@/assets/calculator.js'
+import { add, sub } from '@/assets/calculator.js'
 
 export default {
 	name: 'Calculator',
@@ -35,7 +36,8 @@ export default {
 			display: '',
 			displayEquals: '',
 			actions: {
-				addition: false,
+        addition: false,
+        subtraction: false
 			},
 		}
 	},
@@ -54,6 +56,11 @@ export default {
 		addition() {
 			this.actions.addition = true
 			this.display += ' + '
+    },
+
+		subtraction() {
+			this.actions.subtraction = true
+			this.display += ' - '
 		},
 
 		equals() {
@@ -66,7 +73,18 @@ export default {
 
 					this.actions.addition = false
 				}
-			}
+      }
+      
+      if (this.action.subtraction) {
+        const nums = this.display.split(' - ')
+
+        if(nums[0].length > 0 && nums[1].length > 0) {
+          this.displayEquals = String(sub(nums[0], nums[1]))
+          this.display = ''
+
+          this.actions.subtraction = false
+        }
+      }
 		},
 	},
 }
